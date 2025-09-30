@@ -3,9 +3,9 @@ import java.util.Scanner;
 
 public class Main {
     private static Product[] products = {
-        new Electronic("Laptop", 10000000, 500000),
-        new Food("Roti", 20000, 2000),
-        new Clothing("Kaos", 100000, 15000)
+        new Electronic("Laptop", 10000000),
+        new Food("Roti", 20000),
+        new Clothing("Kaos", 100000)
     };
 
     public static void main(String[] args) {
@@ -29,7 +29,7 @@ public class Main {
                     menuTambahProduk(sc);
                     break;
                 case 3:
-                    System.out.println("Terima kasih, program selesai.");
+                    System.out.println("chill.");
                     break;
                 default:
                     System.out.println("Pilihan tidak valid!");
@@ -64,19 +64,13 @@ public class Main {
         Product baru = null;
         switch (jenis) {
             case 1:
-                System.out.print("Masukkan biaya garansi: ");
-                double garansi = sc.nextDouble();
-                baru = new Electronic(nama, harga, garansi);
+                baru = new Electronic(nama, harga);
                 break;
             case 2:
-                System.out.print("Masukkan pajak: ");
-                double pajak = sc.nextDouble();
-                baru = new Food(nama, harga, pajak);
+                baru = new Food(nama, harga);
                 break;
             case 3:
-                System.out.print("Masukkan diskon: ");
-                double diskon = sc.nextDouble();
-                baru = new Clothing(nama, harga, diskon);
+                baru = new Clothing(nama, harga);
                 break;
             default:
                 System.out.println("Jenis tidak valid!");
@@ -90,7 +84,7 @@ public class Main {
             temp[products.length] = baru; 
             products = temp;
 
-            System.out.println("\nProduk baru berhasil ditambahkan!");
+            System.out.println("\nProduk ditambahkan!");
         }
     }
 }
